@@ -14,49 +14,22 @@ function playRound(playerSelection, computerSelection) {
   computerSelection = computerPlay();
   console.log(playerSelection);
   console.log(computerSelection);
-  
-  
-   if (playerSelection === 'rock' && computerSelection === 'scissors') {
-    
-    
-    return("You win this round! Rock beats scissors. Let's try again!");
-    
-   
-    
-  } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+ 
+  if (playerSelection === 'rock' && computerSelection === 'scissors'||
+      playerSelection === 'paper' && computerSelection === 'rock'||
+      playerSelection === 'scissors' && computerSelection === 'paper'){
+      return(`You win this round! ${playerSelection} beats ${computerSelection} Let's try again!`);
+}
 
-    return("You win this round! Paper beats Rock. Let's try again!");
+  else if(playerSelection === 'rock' && computerSelection === 'paper'||
+          playerSelection === 'paper' && computerSelection === 'scissors'||
+          playerSelection === 'scissors' && computerSelection === 'rock') {
+          return (`You lose this round! ${computerSelection} beats ${playerSelection} Let's try again!`);
+}
 
-  }
-  
-   else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-   
-    return ("You win this round! Scissors beats Paper. Let's try again!");
-
-  } 
-  
-  else if (playerSelection === 'rock' && computerSelection === 'paper') {
-    
-   
-    return("You lose this round, paper beats Rock. Let's try again!");
-
-  } 
-  
-  else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-
-    
-    return ("You lose this round. Scissors beats Paper.Let's try again!");
-
-  } 
-  else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-
-    return  ("You lose this round! Rock beats Scissors.Let's try again!");
-
-  } else { 
-  
-    return("It's a tie!" +  computerSelection);
-    
-  }
+  else{
+          return("It's a tie! Let's try again!");
+}
   
 }
 
@@ -66,9 +39,7 @@ function game(){
    selectionGame = playRound();
    console.log(selectionGame)
     
-    
-    
-  }
+   }
   
 }
 
